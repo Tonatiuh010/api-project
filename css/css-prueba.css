@@ -1,0 +1,43 @@
+html {
+    margin: 0 auto;
+    font-size: 20px;
+    font-family: sans-serif;
+
+}
+
+
+body {
+    margin: auto;
+    color: black;
+}
+
+
+.principal-container {
+    margin: auto;
+    width: 80%;
+    align-items: center;
+
+    padding: 5%;
+
+    background-color: gray;
+
+}
+
+.container {
+    padding: 1%;
+    margin: auto;
+    width: 60%;
+    max-width: 750px;
+    text-align: justify;
+    font-size: 0.9rem;
+
+    background-color:wheat;
+}
+
+
+.table {
+    display: grid;
+    grid-template-rows: 3fr;
+
+    border: black solid 2px;
+}

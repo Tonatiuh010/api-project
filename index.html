@@ -3,9 +3,76 @@
 <html>
 <head>
     <meta charset="uft-8">
+    <meta meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="stylesheet" href="css/css-prueba.css" type="text/CSS">
+
 </head>
 <body>
-Aéŕéé´e
+    <section class="principal-container">
+        <section class="container">
+            <h1>Esta es la lista de prueba</h1>
+            
+            <section id="list">
+
+
+            </section>
+        </section>
+
+    </section>
+
+    <script>
+        
+        class ConnectApi {
+
+            constructor(){
+                this.url='https://es.wikipedia.org/w/api.php?';
+
+            }
+
+
+            connect(params) {
+                
+
+                console.log(this.url+params)
+
+                fetch(this.url+params).
+                then(
+                    response => response.json()).
+                then(
+                    data => {
+                        data.query.search.map(
+                                (item, key ) => {
+                                    appendData(item, key)
+                                }
+                            )
+                        }).
+                catch(
+                    error => {console.log(error)}
+                );
+                
+            }
+
+        }
+
+        const obj= new ConnectApi();
+
+        let data =obj.connect('action=query&list=search&srprop=snippet&format=json&origin=*&utf8=&srsearch=turing')
+
+        function appendData(item,key){
+
+            let section = document.getElementById("list")
+            let container = document.createElement("section")
+
+            container.className= "table"
+
+            container.innerHTML = "<h1>"+item.title+"</h1><h6>"+item.pageid+"</h6><p>"+item.snippet+"</p>";
+
+            section.append(container);
+        }
+        
+
+    </script>
 
 </body>
 </html>
