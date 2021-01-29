@@ -44,6 +44,8 @@
 
     <script>
         
+		var active = document.getElementById("search-data");
+		active.addEventListener("keyup", (event)=>{if(event.keyCode === 13){search();}})
         
 
         function search() {
