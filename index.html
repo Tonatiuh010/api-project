@@ -13,14 +13,13 @@
 
     <header> 
         <section class="principal-container container-flex"> 
-
             <article>
-                <h1> Tus Curiosidades!  </h1>
+                <h1> Tus Curiosidades</h1>
             </article>
 
             <section class="navigator"> 
-                <button onclick="search();"><i class="fas fa-search"></i></button>
-                <input type="search" clas="search" id="search-data" placeholder="Buscar cualquier cosa!"  value="API"/>   
+                <article class="nav-art1"><button onclick="search();"><i class="fas fa-search"></i></button></article>
+                <article class="nav-art2"><input type="search" class="search" id="search-data" placeholder="Buscar cualquier cosa" value="API" /></article>
             </section>
 
         </section>
@@ -30,7 +29,9 @@
 
         <section class="principal-container">
             <section class="container">
-                <h1>Tus Resultados!</h1>
+                <br />
+                <img src="css/wiki.png" width="100%"/>
+                <h3>Tus Resultados!</h3>
                 
                 <section id="list">
 
@@ -96,8 +97,8 @@
 
             container.className= "table"
 
-            container.innerHTML = "<h1>"+item.title+"</h1><p>"+item.snippet+"</p>";
-            container.addEventListener("click", (target) => { location.href= "https://es.wikipedia.org/?curid="+item.pageid})// "href","https://es.wikipedia.org/?curid="+item.pageid)
+            container.innerHTML = '<a href="https://es.wikipedia.org/?curid='+item.pageid+'"><h2>' + item.title +'</h2></a><p>'+item.snippet+'</p>';
+            //container.addEventListener("click", (target) => { location.href= "https://es.wikipedia.org/?curid="+item.pageid})// "href","https://es.wikipedia.org/?curid="+item.pageid)
             
             section.append(container);
         }
