@@ -32,9 +32,6 @@ header {
     justify-content: space-between;
 }
 
-
-
-
 .principal-container {
     margin: auto;
     width: 80%;
@@ -87,14 +84,22 @@ button {
     text-align: justify;
     font-size: 0.9rem;
 
+    
+
 }
+
 
 
 .table {
     display: grid;
     grid-template-rows: 3fr;
     border-bottom: black solid 1px;
+    cursor: pointer;
 }
+
+.table:hover {
+    color:#8d24aa; 
+ }
 
 span {
     color: blue;

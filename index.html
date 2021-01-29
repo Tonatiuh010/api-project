@@ -10,14 +10,12 @@
 
 </head>
 <body onload="search()">
-  
-
 
     <header> 
         <section class="principal-container container-flex"> 
 
             <article>
-                <h1> Tus Curiosidades  </h1>
+                <h1> Tus Curiosidades!  </h1>
             </article>
 
             <section class="navigator"> 
@@ -32,7 +30,7 @@
 
         <section class="principal-container">
             <section class="container">
-                <h1>Esta es la lista de prueba</h1>
+                <h1>Tus Resultados!</h1>
                 
                 <section id="list">
 
@@ -99,7 +97,8 @@
             container.className= "table"
 
             container.innerHTML = "<h1>"+item.title+"</h1><p>"+item.snippet+"</p>";
-
+            container.addEventListener("click", (target) => { location.href= "https://es.wikipedia.org/?curid="+item.pageid})// "href","https://es.wikipedia.org/?curid="+item.pageid)
+            
             section.append(container);
         }
         
