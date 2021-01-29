@@ -4,31 +4,60 @@
 <head>
     <meta charset="uft-8">
     <meta meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <link rel="stylesheet" href="css/css-prueba.css" type="text/CSS">
 
 </head>
-<body>
+<body onload="search()">
+  
+
 
     <header> 
-        <section class="navigator"> </section>
+        <section class="principal-container container-flex"> 
+
+            <article>
+                <h1> Tus Curiosidades  </h1>
+            </article>
+
+            <section class="navigator"> 
+                <button onclick="search();"><i class="fas fa-search"></i></button>
+                <input type="search" clas="search" id="search-data" placeholder="Buscar cualquier cosa!"  value="API"/>   
+            </section>
+
+        </section>
     </header>
 
+    <main>
 
-    <section class="principal-container">
-        <section class="container">
-            <h1>Esta es la lista de prueba</h1>
-            
-            <section id="list">
+        <section class="principal-container">
+            <section class="container">
+                <h1>Esta es la lista de prueba</h1>
+                
+                <section id="list">
 
 
+                </section>
             </section>
-        </section>
 
-    </section>
+        </section>
+    </main>
 
     <script>
         
+        
+
+        function search() {
+            document.getElementById("list").innerHTML=""
+
+
+            let word = document.getElementById("search-data").value;
+
+            const obj= new ConnectApi();
+            let data =obj.connect('action=query&list=search&srprop=snippet&format=json&origin=*&utf8=&srsearch='+word)
+
+        }
+
         class ConnectApi {
 
             constructor(){
@@ -61,9 +90,6 @@
 
         }
 
-        const obj= new ConnectApi();
-
-        let data =obj.connect('action=query&list=search&srprop=snippet&format=json&origin=*&utf8=&srsearch=turing')
 
         function appendData(item,key){
 
@@ -72,7 +98,7 @@
 
             container.className= "table"
 
-            container.innerHTML = "<h1>"+item.title+"</h1><h6>"+item.pageid+"</h6><p>"+item.snippet+"</p>";
+            container.innerHTML = "<h1>"+item.title+"</h1><p>"+item.snippet+"</p>";
 
             section.append(container);
         }

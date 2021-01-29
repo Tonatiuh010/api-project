@@ -5,6 +5,15 @@ html {
 
 }
 
+article {
+    width: 40%;
+}
+
+h1 {
+    font-style: oblique;
+    font-family: cursive;
+
+}
 
 body {
     margin: auto;
@@ -12,42 +21,81 @@ body {
 }
 
 header {
-    width: 100%;
-    background-color: blueviolet;
-    padding: 1%;
+    margin: 0 auto;
+    background-color: #e1bee7;
+
 }
 
 .navigator {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 2%;
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
 }
+
+
+
 
 .principal-container {
     margin: auto;
     width: 80%;
+    max-width: 750px;
     align-items: center;
 
-    padding: 5%;
+    padding: 0.7em;
 
-    background-color: gray;
+    /*background-color: gray;*/
+
+}
+
+.navigator ul {
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    display: flex;
+
+}
+
+button {
+    
+    background-color: #f6e5ef;
+    border: none;
+    border-radius: 300px;
+    font-size: 1.4em;
+
+}
+
+.search {
+    border:none;
+
+}
+
+.navigator li {
+   margin-left: 1em;
+
+}
+
+.container-flex {
+    display: flex;
+    justify-content: space-between;
 
 }
 
 .container {
-    padding: 1%;
+    padding: 1em;
     margin: auto;
-    width: 60%;
     max-width: 750px;
     text-align: justify;
     font-size: 0.9rem;
 
-    background-color:wheat;
 }
 
 
 .table {
     display: grid;
     grid-template-rows: 3fr;
-    border: black solid 2px;
+    border-bottom: black solid 1px;
+}
+
+span {
+    color: blue;
 }
