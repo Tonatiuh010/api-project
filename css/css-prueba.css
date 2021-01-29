@@ -11,6 +11,17 @@ body {
     color: black;
 }
 
+header {
+    width: 100%;
+    background-color: blueviolet;
+    padding: 1%;
+}
+
+.navigator {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 2%;
+}
 
 .principal-container {
     margin: auto;
@@ -38,6 +49,5 @@ body {
 .table {
     display: grid;
     grid-template-rows: 3fr;
-
     border: black solid 2px;
 }
